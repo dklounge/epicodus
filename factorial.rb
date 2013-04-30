@@ -1,3 +1,7 @@
+require 'benchmark'
+
+num = 500
+
 def factorial_recurse(num)
   answer = 1
   if num < 0
@@ -11,8 +15,14 @@ def factorial_recurse(num)
 end
 
 def factorial(num)
+  answer = 1
+  (1..num).each do |el|
+    answer *= el
+  end
+  answer
+
 end
 
 
-p factorial(10)
-p factorial_recurse(10)
+puts Benchmark.measure { factorial_recurse(num) }
+puts Benchmark.measure { factorial(num) }
