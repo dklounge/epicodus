@@ -11,7 +11,7 @@ def factorial_recurse(num)
   else
     answer = num*factorial_recurse(num-1)
   end
-    
+
 end
 
 def factorial(num)
